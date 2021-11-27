@@ -21,62 +21,43 @@ img: /2020/01/15/Canon60D-portrait/4.png
  8. 深色的背景+模特正确的曝光能有效的增加对比度,突出人物主题
 
 
-> {% asset_img 1.png%}
 
 
-> {% asset_img 2.png%}
 
 
-> {% asset_img 3.png%}
 
 
-> {% asset_img 4.png%}
 
 
-> {% asset_img 5.png%}
 
 
-> {% asset_img 6.png%}
 
 
-> {% asset_img 7.png%}
 
 
-> {% asset_img 8.png%}
 
 
-> {% asset_img 9.png%}
 
 
-> {% asset_img 10.png%}
 
 
-> {% asset_img 11.png%}
 
 
-> {% asset_img 12.png%}
 
 
-> {% asset_img 13.png%}
 
 
-> {% asset_img 14.png%}
 
 
-> {% asset_img 15.png%}
 
 
-> {% asset_img 16.png%}
 
 
-> {% asset_img 17.png%}
 
 
-> {% asset_img 18.png%}
 
 
 >- ## Tips: 
 >- 需要for循环批量生成插入图片的语句,又不想创建Java或Python程序,可以直接用git bash 中的shell生成.
 
-`for((i=1;i<19;i++)); do echo "> {% asset_img $i.png%}";  echo ''; echo ''; done`
 

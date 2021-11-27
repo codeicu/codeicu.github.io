@@ -17,4 +17,3 @@ Scancode Map
 2E E0 51 E0 00 00 00 00
 即可把Page up/down 改键为 音量升降
 ```
-> {% asset_img 1.png%}

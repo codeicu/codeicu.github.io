@@ -127,7 +127,6 @@ public class SimplePojo implements Pojo{
 }
 ```
 If you invoke a method on an object reference, the method is invoked directly on that object reference, as the following image and listing show:
-{% asset_img aop-proxy-plain-pojo-call.png %}
 ```java
 public class Main {
 
@@ -140,7 +139,6 @@ public class Main {
 ```
 
 Things change slightly when the reference that client code has is a proxy. Consider the following diagram and code snippet:
-{% asset_img aop-proxy-call.png %}
 
 ```java
 public class Main {

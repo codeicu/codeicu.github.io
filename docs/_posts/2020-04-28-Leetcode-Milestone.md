@@ -8,4 +8,3 @@ categories:
 
 算法的艺术, 迷人的艺术
 
-{% asset_img 1.png%}
