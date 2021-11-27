@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'Fork,Join FrameWork'
 date: 2020-03-13 20:19:30
 tags: Concurrency

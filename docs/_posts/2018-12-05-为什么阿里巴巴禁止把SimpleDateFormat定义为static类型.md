@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 为什么阿里巴巴禁止把SimpleDateFormat定义为static类型
 date: 2018-12-05 11:10:52
 tags: 技巧

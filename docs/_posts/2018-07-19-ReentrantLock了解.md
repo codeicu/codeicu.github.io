@@ -1,4 +1,5 @@
 ---
+layout: post
 title: ReentrantLock了解
 tags: 面试
 date: 2018-07-19 11:16:48

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: '@Autowire与@Resource的区别'
 date: 2020-05-04 16:49:07
 tags: Spring

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: skateboarding-girl
 date: 2020-01-14 18:51:38
 tags: photograph

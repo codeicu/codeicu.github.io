@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 为什么阿里巴巴禁止使用isSuccess作为变量名
 date: 2019-01-09 10:33:06
 tags: Java

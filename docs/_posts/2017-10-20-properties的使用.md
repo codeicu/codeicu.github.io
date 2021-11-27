@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 2017.10.20 properties的使用
 date: 2017-10-20 07:55:58
 tags: Java

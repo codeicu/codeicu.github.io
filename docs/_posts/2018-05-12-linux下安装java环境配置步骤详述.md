@@ -1,4 +1,5 @@
 ---
+layout: post
 title: linux下安装java环境配置步骤详述
 date: 2018-05-12 16:45:37
 tags: 技巧

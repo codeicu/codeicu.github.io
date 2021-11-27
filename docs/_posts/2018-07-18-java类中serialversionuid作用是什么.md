@@ -1,4 +1,5 @@
 ---
+layout: post
 title: java类中serialversionuid作用是什么
 tags: 面试
 date: 2018-07-18 20:58:10

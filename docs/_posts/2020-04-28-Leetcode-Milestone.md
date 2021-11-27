@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Leetcode-Milestone
 date: 2020-04-1 19:24:20
 tags: 算法

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: idea创建maven一直loading_archetype_list
 date: 2018-05-11 10:48:09
 tags: Java

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: springboot遇到一些问题
 tags: 项目
 date: 2018-07-28 20:34:56

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 关闭idea的searchEverywhere
 date: 2018-05-24 20:00:41
 tags: Java

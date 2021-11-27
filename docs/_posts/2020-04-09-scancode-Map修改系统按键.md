@@ -1,4 +1,5 @@
 ---
+layout: post
 title: scancode-Map修改系统按键
 date: 2020-04-09 11:21:08
 tags: 技巧

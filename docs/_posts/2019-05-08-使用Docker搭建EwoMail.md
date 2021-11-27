@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 使用Docker搭建EwoMail
 date: 2019-05-08 11:25:49
 tags: Linux

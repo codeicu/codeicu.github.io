@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Spring_Framework_IoC_Container
 date: 2020-05-05 11:38:42
 tags:

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Canon60D-portrait
 date: 2020-01-15 10:01:38
 tags: photograph

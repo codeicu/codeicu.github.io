@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 2017.10.30 Spring,Struts学习
 date: 2017-10-29 07:55:58
 tags: Java Framework

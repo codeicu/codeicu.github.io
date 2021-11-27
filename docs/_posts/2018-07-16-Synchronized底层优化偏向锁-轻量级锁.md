@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'Synchronized底层优化偏向锁,轻量级锁'
 date: 2018-07-16 22:52:33
 tags: 面试

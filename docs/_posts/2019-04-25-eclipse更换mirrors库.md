@@ -1,4 +1,5 @@
 ---
+layout: post
 title: eclipse更换mirrors库
 date: 2019-04-25 22:48:30
 tags: Java

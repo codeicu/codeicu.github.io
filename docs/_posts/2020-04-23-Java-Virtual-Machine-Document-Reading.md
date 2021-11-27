@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Java_Virtual_Machine_Document_Reading
 date: 2020-04-23 08:56:21
 tags: JVM

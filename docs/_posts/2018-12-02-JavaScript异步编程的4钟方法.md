@@ -1,4 +1,5 @@
 ---
+layout: post
 title: JavaScript异步编程的4钟方法
 date: 2018-12-02 11:00:10
 tags: Java

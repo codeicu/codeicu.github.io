@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Spring_Framework_AOP_Concepts
 date: 2020-05-05 22:05:17
 tags: Spring

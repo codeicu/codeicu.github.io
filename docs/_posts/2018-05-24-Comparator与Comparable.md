@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Comparator与Comparable
 date: 2018-05-24 14:57:12
 tags: Java

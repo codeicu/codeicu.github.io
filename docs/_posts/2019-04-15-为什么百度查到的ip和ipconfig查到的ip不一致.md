@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 为什么百度查到的ip和ipconfig查到的ip不一致
 date: 2019-04-15 17:46:17
 tags: 计算机网络

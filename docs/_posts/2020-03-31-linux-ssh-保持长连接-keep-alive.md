@@ -1,4 +1,5 @@
 ---
+layout: post
 title: linux-ssh-保持长连接-keep-alive
 date: 2020-03-31 21:46:39
 tags: Linux

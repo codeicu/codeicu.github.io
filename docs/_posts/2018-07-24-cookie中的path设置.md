@@ -1,4 +1,5 @@
 ---
+layout: post
 title: cookie中的path设置
 tags: 项目
 date: 2018-07-24 15:06:08

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Idea Mark Directory as Source Roots的含义
 date: 2019-06-05 08:50:31
 tags: Java

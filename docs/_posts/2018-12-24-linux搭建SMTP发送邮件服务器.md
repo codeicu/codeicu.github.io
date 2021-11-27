@@ -1,4 +1,5 @@
 ---
+layout: post
 title: linux搭建SMTP发送邮件服务器
 date: 2018-12-24 19:42:26
 tags: 技巧

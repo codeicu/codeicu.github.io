@@ -1,4 +1,5 @@
 ---
+layout: post
 title: hibernate onetomany onetoone
 date: 2019-08-18 22:32:15
 tags: Java Framework

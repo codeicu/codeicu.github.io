@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 含泪记录postfix+javaMail实现邮件发送
 date: 2018-12-25 11:04:18
 tags: Linux

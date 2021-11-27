@@ -1,4 +1,5 @@
 ---
+layout: post
 title: JShell_User_Guide
 date: 2020-05-01 10:54:13
 tags: Java

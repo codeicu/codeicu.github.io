@@ -1,4 +1,5 @@
 ---
+layout: post
 title: springboot热部署
 tags: 技巧
 date: 2018-07-22 10:40:09

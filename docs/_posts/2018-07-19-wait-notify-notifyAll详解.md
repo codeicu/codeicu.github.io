@@ -1,4 +1,5 @@
 ---
+layout: post
 title: wait/notify/notifyAll详解
 tags: 面试
 date: 2018-07-19 17:49:53

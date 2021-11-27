@@ -1,4 +1,5 @@
 ---
+layout: post
 title: static与this
 date: 2018-07-16 10:33:33
 tags: 面试

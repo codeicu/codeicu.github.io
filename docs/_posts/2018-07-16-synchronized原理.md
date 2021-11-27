@@ -1,4 +1,5 @@
 ---
+layout: post
 title: synchronized原理
 date: 2018-07-16 22:20:28
 tags: 面试

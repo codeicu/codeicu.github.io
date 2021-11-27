@@ -1,4 +1,5 @@
 ---
+layout: post
 title: '@Controller,@Component,@Service,@Repository的区别'
 date: 2020-05-04 17:16:48
 tags: Spring

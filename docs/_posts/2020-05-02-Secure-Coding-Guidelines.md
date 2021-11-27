@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Secure_Coding_Guidelines
 date: 2020-05-02 23:42:39
 tags: Java

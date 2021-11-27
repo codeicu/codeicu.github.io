@@ -1,4 +1,5 @@
 ---
+layout: post
 title: javascript学习
 date: 2019-03-31 10:12:45
 tags: 前端

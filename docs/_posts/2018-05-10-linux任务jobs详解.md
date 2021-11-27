@@ -1,4 +1,5 @@
 ---
+layout: post
 title: linux任务jobs详解
 date: 2018-05-10 21:22:26
 tags: 技巧

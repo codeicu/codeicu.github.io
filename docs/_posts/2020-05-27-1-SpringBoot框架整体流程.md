@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 1.SpringBoot框架整体流程
 date: 2020-05-27 11:00:59
 tags: SpringBoot源码

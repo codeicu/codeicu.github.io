@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 2017.10.9 JavaScript学习
 date: 2017-10-17 07:55:58
 tags: Java Framework

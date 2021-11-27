@@ -1,4 +1,5 @@
 ---
+layout: post
 title: centos7搭建简单邮件服务器postfix+dovecot
 date: 2018-12-24 20:26:44
 tags: Linux

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: substring导致内存泄漏
 tags: 面试
 date: 2018-08-24 15:56:14
