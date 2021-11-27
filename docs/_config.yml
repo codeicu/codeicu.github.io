@@ -22,7 +22,7 @@ title: CODE ICU
 email: i don't use it a lot
 description: >- # this means to ignore newlines until "baseurl:"
   Recording Coding Stuff
-baseurl: "/post" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://codeicu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 domain: "codeicu.github.io"
 # Build settings
