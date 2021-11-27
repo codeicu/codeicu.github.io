@@ -1,4 +1,4 @@
-title: C O D E I C U
+title: "C O D E I C U"
 description: >- # this means to ignore newlines until "baseurl:"
   Code Recording
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -7,3 +7,4 @@ url: "https://codeicu.github.io" # the base hostname & protocol for your site, e
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
+show_downloads: false
