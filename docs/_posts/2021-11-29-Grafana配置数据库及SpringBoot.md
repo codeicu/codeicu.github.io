@@ -143,48 +143,51 @@ static_configs:
 ### prometheus.yml 详细配置
 ```
 global:
-scrape_interval: 60s
-evaluation_interval: 60s
+  scrape_interval:     60s
+  evaluation_interval: 60s
 
 scrape_configs:
-- job_name: prometheus
-static_configs:
-- targets: ['localhost:9090']
-labels:
-instance: prometheus
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          instance: prometheus
 
-- job_name: linux
-static_configs:
-- targets: ['192.168.159.131:9100']
-labels:
-instance: localhost
+  - job_name: linux
+    static_configs:
+      - targets: ['192.168.159.131:9100']
+        labels:
+          instance: localhost
 
-- job_name: mysql
-static_configs:
-- targets: ['192.168.159.131:7002']
-labels:
-instance: localhost
+  - job_name: mysql
+    static_configs:
+      - targets: ['192.168.159.131:3306']
+        labels:
+          instance: localhost
 
-- job_name: 'redis_exporter_targets'
-static_configs:
-- targets:
-- redis://192.168.159.131:7000
-- redis://192.168.159.131:7001
-- redis://192.168.159.131:7002
-metrics_path: /scrape
-relabel_configs:
-- source_labels: [__address__]
-target_label: __param_target
-- source_labels: [__param_target]
-target_label: instance
-- target_label: __address__
-replacement: 192.168.159.131:9121
+  - job_name: 'redis_exporter_targets'
+    static_configs:
+      - targets:
+        - redis://192.168.159.131:7000
+        - redis://192.168.159.131:7001
+        - redis://192.168.159.131:7002
+        - redis://192.168.159.131:7003
+        - redis://192.168.159.131:7004
+        - redis://192.168.159.131:7005
+    metrics_path: /scrape
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 192.168.159.131:9121
 
-- job_name: 'dccd-admin-server 215'
-scrape_interval: 5s
-metrics_path: '/actuator/prometheus'
-static_configs:
-- targets: ['10.10.184.215:8301']
+  - job_name: 'springboot 215'
+    scrape_interval: 5s
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.159.131:8301']
 ```
 
 ## 说明
