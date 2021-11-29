@@ -30,8 +30,7 @@ vim prometheus.yml
 docker run -d -p 9090:9090 -v /opt/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 mkdir /opt/grafana-storage
 chmod 777 -R /opt/grafana-storage
-# 将Grafana映射到外网7000端口上
-docker run -d -p 7000:3000 --name=grafana -v /opt/grafana-storage:/var/lib/grafana grafana/grafana
+docker run -d -p 3000:3000 --name=grafana -v /opt/grafana-storage:/var/lib/grafana grafana/grafana
 ```
 
 ### 安装node-exporter
