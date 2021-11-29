@@ -49,14 +49,14 @@ date -R
 docker pull prom/mysqld-exporter
 docker rm -f mysqld-exporter
 
-docker run -d --name mysqld-exporter -v /etc/timezone:/etc/timezone -v /etc/localtime:/etc/localtime -p 9104:9104 -e DATA_SOURCE_NAME="dev_user:xxxx@(10.10.184.56:3307)/" --restart=unless-stopped prom/mysqld-exporter
+docker run -d --name mysqld-exporter -v /etc/timezone:/etc/timezone -v /etc/localtime:/etc/localtime -p 9104:9104 -e DATA_SOURCE_NAME="root:xxx@(192.168.159.131:3306)/" --restart=unless-stopped prom/mysqld-exporter
 
 docker logs -f --tail 10 mysqld-exporter 
 ```
 
 ### 安装redis_exporter
 ```shell
-docker run -d --name redis_exporter -p 9121:9121 oliver006/redis_exporter --redis.password 'xxxx'
+docker run -d --name redis_exporter -p 9121:9121 oliver006/redis_exporter --redis.password 'xxx'
 ```
 
 ### 安装SpringBoot监控
