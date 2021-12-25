@@ -24,7 +24,6 @@ docker pull jenkins/jenkins
 sudo docker run --memory 1.5G  --name jenkins-gradle1 \
 -p 7010:8080 -p 50000:50000 -p 50001:22 -u root -d \
 -e TZ=Asia/Shanghai \
---env JAVA_OPTS="-Xms2048m -Xmx4096m"  \
 --restart=always \
 -v /var/run/docker.sock:/var/run/docker.sock   \
 -v /opt/maven/apache-maven:/opt/maven/apache-maven  \
@@ -147,7 +146,7 @@ apt-get install ssh -y
 # 生成密钥
 ssh-keygen
 # 将本地密钥传输到远程
-ssh-copy-id -p 45685   root@10.10.184.215
+ssh-copy-id -p 45685   root@localhost
 
 apt-get install ansible -y
 # 测试
@@ -163,7 +162,7 @@ vi /etc/ansible/hosts
 ### Ansible playbook重启远端服务
 
 ```shell
-- hosts: 10.10.184.215
+- hosts: localhost
   vars:
     today_date: "{{ lookup('pipe', 'date +\"%Y%m%d\"') }}"
   tasks:
