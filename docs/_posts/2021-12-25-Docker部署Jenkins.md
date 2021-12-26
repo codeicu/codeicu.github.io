@@ -21,7 +21,7 @@ docker start $(docker ps -a -q)  启动所有容器
 ```shell
 docker pull jenkins/jenkins
 
-sudo docker run --memory 1.5G  --name jenkins-gradle1 \
+sudo docker run   --name jenkins \
 -p 7010:8080 -p 50000:50000 -p 50001:22 -u root -d \
 -e TZ=Asia/Shanghai \
 --restart=always \
