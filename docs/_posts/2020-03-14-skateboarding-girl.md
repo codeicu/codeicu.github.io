@@ -15,25 +15,25 @@ img: /2020/03/14/skateboarding-girl/5.jpg
 
 
 
->- ![](codeicu.github.io/assets/skateboarding-girl/1.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/1.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/2.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/2.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/3.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/3.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/4.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/4.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/5.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/5.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/6.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/6.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/7.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/7.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/8.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/8.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/9.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/9.jpg)
 
->- ![](codeicu.github.io/assets/skateboarding-girl/10.jpg)
+>- ![](/codeicu.github.io/assets//skateboarding-girl/10.jpg)
 
 >## 可以改进
 >- 局部特写
