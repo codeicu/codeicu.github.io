@@ -114,7 +114,7 @@ docker run --name zipkin -d -p 9411:9411 openzipkin/zipkin
 
 # 开启远程Docker
 1. 修改虚拟机IP租用时长, 以免虚拟机频繁更换ip
- ![](pic/安装虚拟机,开启远程Docker,部署Eureka集群/1.png)
+ ![](codeicu.github.io/assets/安装虚拟机,开启远程Docker,部署Eureka集群/1.png)
 2. 修改Docker配置,支持远程调用
 ```
 vim /lib/systemd/system/docker.service
@@ -247,7 +247,7 @@ docker network inspect mynetwork
 ```   
 
 # 大功告成!
-![](pic/安装虚拟机,开启远程Docker,部署Eureka集群/2.png)
+![](codeicu.github.io/assets/安装虚拟机,开启远程Docker,部署Eureka集群/2.png)
 
 用时2h+, 从写Dockerfile,到部署集群, 尝试了很多次, 最终成达成目标得益于硬件软件环境配置的好:
 1. 电脑cpu风扇的异响通过加点食用油解决了

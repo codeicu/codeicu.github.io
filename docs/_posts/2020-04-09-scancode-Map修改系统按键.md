@@ -22,5 +22,5 @@ Scancode Map
 4F E0 51 E0 00 00 00 00
 即可把Page up/down 改键为 home/end
 ```
-> ![](pic/scancode-Map修改系统按键/1.png)
+> ![](codeicu.github.io/assets/scancode-Map修改系统按键/1.png)
 
