@@ -21,62 +21,62 @@ img: /2020/01/15/Canon60D-portrait/4.png
  8. 深色的背景+模特正确的曝光能有效的增加对比度,突出人物主题
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/1.png)
+> ![](/assets/Canon60D-portrait/1.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/2.png)
+> ![](/assets/Canon60D-portrait/2.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/3.png)
+> ![](/assets/Canon60D-portrait/3.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/4.png)
+> ![](/assets/Canon60D-portrait/4.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/5.png)
+> ![](/assets/Canon60D-portrait/5.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/6.png)
+> ![](/assets/Canon60D-portrait/6.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/7.png)
+> ![](/assets/Canon60D-portrait/7.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/8.png)
+> ![](/assets/Canon60D-portrait/8.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/9.png)
+> ![](/assets/Canon60D-portrait/9.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/10.png)
+> ![](/assets/Canon60D-portrait/10.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/11.png)
+> ![](/assets/Canon60D-portrait/11.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/12.png)
+> ![](/assets/Canon60D-portrait/12.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/13.png)
+> ![](/assets/Canon60D-portrait/13.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/14.png)
+> ![](/assets/Canon60D-portrait/14.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/15.png)
+> ![](/assets/Canon60D-portrait/15.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/16.png)
+> ![](/assets/Canon60D-portrait/16.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/17.png)
+> ![](/assets/Canon60D-portrait/17.png)
 
 
-> ![](/codeicu.github.io/assets//Canon60D-portrait/18.png)
+> ![](/assets/Canon60D-portrait/18.png)
 
 
 >- ## Tips: 
 >- 需要for循环批量生成插入图片的语句,又不想创建Java或Python程序,可以直接用git bash 中的shell生成.
 
-`for((i=1;i<19;i++)); do echo "> ![](/codeicu.github.io/assets//Canon60D-portrait-.png)";  echo ''; echo ''; done`
+`for((i=1;i<19;i++)); do echo "> ![](/assets/Canon60D-portrait-.png)";  echo ''; echo ''; done`
 
