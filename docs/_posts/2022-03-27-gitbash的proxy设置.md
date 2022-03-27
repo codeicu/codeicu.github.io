@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "vue项目优化策略"
+title:  "gitbash的proxy设置"
 date:   2022-03-27 10:30:38 +0800
 categories: vue
 ---
