@@ -55,6 +55,7 @@ docker logs -f --tail 10 mysqld-exporter
 ```
 
 ### 安装redis_exporter
+
 ```shell
 docker run -d --name redis_exporter -p 9121:9121 oliver006/redis_exporter --redis.password 'xxx'
 ```
@@ -92,7 +93,7 @@ management.endpoints.web.exposure.include=*
 management.metrics.tags.application=${spring.application.name}
 ```
 
-访问http://localhost:8080/actuator/prometheus验证是否可以访问metrics
+访问<http://localhost:8080/actuator/prometheus验证是否可以访问metrics>
 
 最后在Prometheus中添加spring应用的接口地址:
 
@@ -140,6 +141,7 @@ static_configs:
 - springboot: 4701
 
 ### prometheus.yml 详细配置
+
 ```
 global:
   scrape_interval:     60s
@@ -195,7 +197,7 @@ scrape_configs:
 
 Prometheus默认使用基于磁盘的时间序列数据库, 非常高效.
 
-默认文件储存时间为2周. 修改方法: 
+默认文件储存时间为2周. 修改方法:
 
 ```sh
 vim /etc/sysconfig/prometheus 
