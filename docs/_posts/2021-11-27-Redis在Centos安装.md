@@ -27,4 +27,4 @@ scl enable devtoolset-9 bash
 
 echo "source /opt/rh/devtoolset-9/enable" >>/etc/profile
 
-4、安装redis：
+4、安装redis
