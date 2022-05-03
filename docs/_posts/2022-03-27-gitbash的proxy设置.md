@@ -18,8 +18,6 @@ vi ~/.gitconfig
 [user]
         name = zink
         email = zink@no.email
-~
-
 ```
 
 # 或者
