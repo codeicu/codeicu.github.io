@@ -5,11 +5,14 @@ date:   2022-11-27 13:39:38 +0800
 categories: springboot
 ---
 
-涉及到三个参数：
-session.timeout.ms：group coordinator检测consumer发生崩溃所需的时间。一个consumer group里面的某个consumer挂掉了，最长需要 session.timeout.ms 秒检测出来。它指定了一个阈值—10秒，在这个阈值内如果group coordinator未收到consumer的任何消息（指心跳），那coordinator就认为consumer挂了。
-heartbeat.interval.ms：每个consumer 都会根据 heartbeat.interval.ms 参数指定的时间周期性地向group coordinator发送 hearbeat，group coordinator会给各个consumer响应，若发生了 rebalance，各个consumer收到的响应中会包含 REBALANCE_IN_PROGRESS 标识，这样各个consumer就知道已经发生了rebalance，同时 group coordinator也知道了各个consumer的存活情况。
-max.poll.interval.ms：如果consumer两次poll操作间隔超过了这个时间，broker就会认为这个consumer处理能力太弱，会将其踢出消费组，将分区分配给别的consumer消费 ，触发rebalance 。
-总结：new KafkaConsumer对象后，在while true循环中执行consumer.poll操作拉取消息中，会有两个线程执行：一个是heartbeat 线程，另一个是processing线程。
+### Kafka消费timeout涉及到三个参数：
+- session.timeout.ms：group coordinator检测consumer发生崩溃所需的时间。一个consumer group里面的某个consumer挂掉了，最长需要 session.timeout.ms 秒检测出来。它指定了一个阈值—10秒，在这个阈值内如果group coordinator未收到consumer的任何消息（指心跳），那coordinator就认为consumer挂了。
+- heartbeat.interval.ms：每个consumer 都会根据 heartbeat.interval.ms 参数指定的时间周期性地向group coordinator发送 hearbeat，group coordinator会给各个consumer响应，若发生了 rebalance，各个consumer收到的响应中会包含 REBALANCE_IN_PROGRESS 标识，这样各个consumer就知道已经发生了rebalance，同时 group coordinator也知道了各个consumer的存活情况。
+- max.poll.interval.ms：如果consumer两次poll操作间隔超过了这个时间，broker就会认为这个consumer处理能力太弱，会将其踢出消费组，将分区分配给别的consumer消费 ，触发rebalance 。
+
+#### 总结：
+
+new KafkaConsumer对象后，在while true循环中执行consumer.poll操作拉取消息中，会有两个线程执行：一个是heartbeat 线程，另一个是processing线程。
 
 processing线程可理解为调用consumer.poll方法执行消息处理逻辑的线程，
 而heartbeat线程是一个后台线程，对程序员是"隐藏不见"的。heartbeat线程每隔heartbeat.interval.ms向coordinator发送一个心跳包，证明自己还活着。但是如果group coordinator在一个heartbeat.interval.ms周期内未收到consumer的心跳，就把该consumer移出group，这有点说不过去。事实上，有可能网络延时，有可能consumer出现了一次长时间GC，影响了心跳包的到达，说不定下一个heartbeat就正常了。而如果group coordinator在session.timeout.ms 内未收到consumer的心跳，那就会把该consumer移出group。
@@ -17,14 +20,11 @@ processing线程可理解为调用consumer.poll方法执行消息处理逻辑的
 而max.poll.interval.ms参数，在consumer两次poll操作间隔超过了这个时间，即consumer的消息处理逻辑时长超过了max.poll.interval.ms，该消费者就会被提出消费者组。
 
 多个业务往向一个Kafka topic发送消息，有些业务的消费量很大，有些业务的消息量很小。因Kafka尚未较好地支持按优先级来消费消息，导致某些业务的消息消费延时的问题。
-
 一种简单的解决方案是再增加几个Topic，面对一些系统遗留问题，增加Topic带来的是生产者和消费者处理逻辑复杂性。
-
 一种方法是使用Kafka Standalone consumer，先使用consumer.partitionFor("TOPIC_NAME")获取topic下的所有分区信息，再使用consumer.assign(partitions)显示地为consumer指定消费分区。
-
 另一种方法是基于consumer group 自定义Kafka consumer的分区分配策略，那这时候就得对Kafka目前已有的分区分配策略有所了解，并且明白什么时候、什么场景下触发rebalance？
 
-1、heartbeat.interval.ms
+### 1、heartbeat.interval.ms
 Kafka consumer要消费消息，哪些的分区的消息交给哪个consumer消费呢？这是consumer的分区分配策略，默认有三个：range、round-robin、sticky。
 
 因为一个topic往往有多个分区，而我们又会在一个consumer group里面创建多个消费者消费这个topic，因此，就有了一个问题：哪些的分区的消息交给哪个consumer消费呢？这里涉及到三个概念：consumer group，consumer group里面的consumer，以及每个consumer group有一个 group coordinator。conusmer分区分配是通过组管理协议来实施的。具体如下：
@@ -35,7 +35,7 @@ consumer group里面的各个consumer都向 group coordinator发送JoinGroup请�
 而在正常情况下 ，当有consumer进出consumer group时就会触发rebalance，所谓rebalance就是重新制订一个分区分配方案。而制订好了分区分配方案，就得及时告知各个consumer，这就与 heartbeat.interval.ms参数有关了。
 
 具体说来就是：每个consumer 都会根据 heartbeat.interval.ms 参数指定的时间周期性地向group coordinator发送 hearbeat，group coordinator会给各个consumer响应，若发生了 rebalance，各个consumer收到的响应中会包含 REBALANCE_IN_PROGRESS 标识，这样各个consumer就知道已经发生了rebalance，同时 group coordinator也知道了各个consumer的存活情况。
-2、heartbeat.interval.ms 与 session.timeout.ms 的对比
+### 2、heartbeat.interval.ms 与 session.timeout.ms 的对比
 那为什么要把 heartbeat.interval.ms 与 session.timeout.ms 进行对比呢？
 
 session.timeout.ms是指：group coordinator检测consumer发生崩溃所需的时间。一个consumer group里面的某个consumer挂掉了，最长需要 session.timeout.ms 秒检测出来。
@@ -50,7 +50,8 @@ session.timeout.ms是个"逻辑"指标，它指定了一个阈值—10秒，在�
 
 而heartbeat.interval.ms肯定是要小于session.timeout.ms的，如果consumer group发生了rebalance，通过心跳包里面的REBALANCE_IN_PROGRESS，consumer就能及时知道发生了rebalance，从而更新consumer可消费的分区。而如果超过了session.timeout.ms，group coordinator都认为consumer挂了，那也当然不用把 rebalance信息告诉该consumer了。
 
-3、session.timeout.ms 和 max.poll.interval.ms
+### 3、session.timeout.ms 和 max.poll.interval.ms
+
 在kafka0.10.1之后的版本中，将session.timeout.ms和 max.poll.interval.ms 解耦了。
 
 也就是说：new KafkaConsumer对象后，在while true循环中执行consumer.poll拉取消息这个过程中，其实背后是有2个线程的，即一个kafka consumer实例包含2个线程：一个是heartbeat 线程，另一个是processing线程。
@@ -65,7 +66,7 @@ processing线程可理解为调用consumer.poll方法执行消息处理逻辑的
 
 而将二者分开，一个processing线程负责执行消息处理逻辑，一个heartbeat线程负责发送心跳包，那么，就算一条消息需要处理5min，只要heartbeat线程在session.timeout.ms向group coordinator发送了心跳包，那consumer可以继续处理消息，而不用担心被移出group了。另一个好处是：如果consumer出了问题，那么在 session.timeout.ms内就能检测出来，而不用等到 max.poll.interval.ms 时长后才能检测出来。
 
-4、一次kafka consumer 不断地 rebalance 分析
+### 4、一次kafka consumer 不断地 rebalance 分析
 明白了session.timeout.ms 和 max.poll.interval.ms 和 heartbeat.interval.ms三个参数的意义后，现在来实际分析一下项目中经常碰到的 consumer rebalance 错误。
 
 一般我们是在一个线程（用户线程）里面执行kafka consumer 的while true循环逻辑的，其实这里有2个线程：一个是用户线程，另一个是心跳线程。心跳线程，我想就是根据heartbeat.interval.ms参数配置的值周期性向coordinator发送心跳包以证明consumer还活着。
@@ -75,5 +76,6 @@ processing线程可理解为调用consumer.poll方法执行消息处理逻辑的
 我想，问题应该是 max.poll.interval.ms这个参数引起的吧，因为在ERROR日志中，老是提示：消息处理逻辑花了太长的时间，要么减少max.poll.records值，要么增大session.timeout.ms的值。尽管有后台heartbeat 线程，但是如果consumer的消息处理逻辑时长超过了 max.poll.interval.ms ，那么此consumer提交offset就会失败：
 
 org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
-1
+
+
 此外，在用户线程中，一般会做一些失败的重试处理。比如通过线程池的 ThreadPoolExecutor#afterExecute()方法捕获到异常，再次提交Runnable任务重新订阅kafka topic。本来消费处理需要很长的时间，如果某个consumer处理超时：消息处理逻辑的时长大于max.poll.interval.ms (或者消息处理过程中发生了异常)，被coordinator移出了consumer组，这时由于失败的重试处理，自动从线程池中拿出一个新线程作为消费者去订阅topic，那么意味着有新消费者加入group，就会引发 rebalance，而可悲的是：新的消费者还是来不及处理完所有消息，又被移出group。如此循环，就发生了不停地 rebalance 的现象。
