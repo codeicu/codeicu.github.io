@@ -103,9 +103,9 @@ systemctl start docker
 ```
 # docker安装软件
 ```
-docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
-docker run -itd --name redis-test -p 6379:6379 redis
-docker run -itd --name mongo -p 27017:27017 mongo
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d --restart=always mysql:5.7
+docker run -itd --name redis-test -p 6379:6379 -d --restart=always redis
+docker run -itd --name mongo -p 27017:27017 -d --restart=always mongo
 docker run -d --hostname my-rabbit --name rabbit -v /data/rabbitmq:/var/lib/rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 docker run -d --name zookeeper -p 2181:2181 -v /etc/localtime:/etc/localtime wurstmeister/zookeeper
 docker run -d --restart=always --log-driver json-file --log-opt max-size=100m --log-opt max-file=2 --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=192.168.36.129:2181/kafka -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.36.129:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -v /etc/localtime:/etc/localtime wurstmeister/kafka
